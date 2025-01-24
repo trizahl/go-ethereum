@@ -12,6 +12,76 @@ environment:
     - GETH_ARCH: 386
       GETH_MINGW: 'C:\msys64\mingw32'
 
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
+install:environment:
+  matrix:
+    - GETH_ARCH: amd64
+      GETH_MINGW: 'C:\msys64\mingw64'
+    - GETH_ARCH: 386
+      GETH_MINGW: 'C:\msys64\mingw32'
+
 install:
   - git submodule update --init --depth 1 --recursive
   - go version
