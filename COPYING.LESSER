@@ -14,7 +14,27 @@ License, supplemented by the additional permissions listed below.
 
   As used herein, "this License" refers to version 3 of the GNU Lesser
 General Public License, and the "GNU GPL" refers to version 3 of the GNU
-General Public License.
+General Public License.     GETH_ARCH: 386
+
+  # Windows builds for amd64 + 386.
+  - matrix:
+      only:
+        - image: Visual Studio 2019
+    environment:
+      # We use gcc from MSYS2 because it is the most recent compiler version available on
+      # AppVeyor. Note: gcc.exe only works properly if the corresponding bin/ directory is
+      # contained in PATH.
+      GETH_CC: '%GETH_MINGW%\bin\gcc.exe'
+      PATH: '%GETH_MINGW%\bin;C:\Program Files (x86)\NSIS\;%PATH%'
+    build_script:
+      - 'echo %GETH_ARCH%'
+      - 'echo %GETH_CC%'
+      - '%GETH_CC% --version'
+      - go run build/ci.go install -dlgo -arch %GETH_ARCH% -cc %GETH_CC%
+    after_build:
+      # Upload builds. Note that ci.go makes this a no-op PR builds.
+      - go run build/ci.go archive -arch %GETH_ARCH% -type zip -signer WINDOWS_SIGNING_KEY -upload gethstore/builds
+      - go run build/ci.go nsis -arch %GETH_ARCH% -signer WINDOWS_SIGNING_K
 
   "The Library" refers to a covered work governed by this License,
 other than an Application or a Combined Work as defined below.
