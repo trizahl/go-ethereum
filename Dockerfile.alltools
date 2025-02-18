@@ -22,6 +22,14 @@ ADD . /go-ethereum
 RUN cd /go-ethereum && go run build/ci.go install -static ./cmd/geth
 
 RUN cd /go-ethereum && go run build/ci.go install -static
+# This is not strictly necessary, but it matches the "Dockerfile" steps, thus
+# makes it so that under certain circumstances, the docker layer can be cached,
+# and the builder can jump to the next (build all) command, with the go cache fully loaded.
+#
+RUN cd /go-ethereum && go run build/ci.go install -static ./cmd/geth
+
+RUN cd /go-ethereum && go run build/ci.go install -static
+
 
 # Pull all binaries into a second stage deploy alpine container
 FROM alpine:latest
