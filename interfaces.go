@@ -23,7 +23,25 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"	"context"
+	"errors"
+	"math/big"
+
+	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
+)
+
+// NotFound is returned by API methods if the requested item does not exist.
+var NotFound = errors.New("not found")	"context"
+	"errors"
+	"math/big"
+
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
+)
+
+// NotFound is returned by API methods if the requested item does not exist.
+var NotFound = errors.New("not found")
 )
 
 // NotFound is returned by API methods if the requested item does not exist.
