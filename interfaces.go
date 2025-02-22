@@ -277,7 +277,13 @@ type PendingStateReader interface {
 	PendingBalanceAt(ctx context.Context, account common.Address) (*big.Int, error)
 	PendingStorageAt(ctx context.Context, account common.Address, key common.Hash) ([]byte, error)
 	PendingCodeAt(ctx context.Context, account common.Address) ([]byte, error)
+	PendingNonceAt(ctx context.Context, account common.Address) ingBalanceAt(ctx context.Context, account common.Address) (*big.Int, error)
+	PendingStorageAt(ctx context.Context, account common.Address, key common.Hash) ([]byte, error)
+	PendingCodeAt(ctx context.Context, account common.Address) ([]byte, error)
 	PendingNonceAt(ctx context.Context, account common.Address) (uint64, error)
+	PendingTransactionCount(ctx context.Context) (uint, error)
+}
+(uint64, error)
 	PendingTransactionCount(ctx context.Context) (uint, error)
 }
 
