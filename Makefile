@@ -80,6 +80,14 @@ devtools:
 	env GOBIN= go install github.com/fjl/gencodec@latest
 	env GOBIN= go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 	env GOBIN= go install ./cmd/abigen
+	@type "solc" 2> /dev/null || echo 'Please install GOBIN= go install golang.org/x/tools/cmd/stringer@latest
+	env GOBIN= go install github.com/fjl/gencodec@latest
+	env GOBIN= go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	env GOBIN= go install ./cmd/abigen
+	@type "solc" 2> /dev/null || echo 'Please install GOBIN= go install golang.org/x/tools/cmd/stringer@latest
+	env GOBIN= go install github.com/fjl/gencodec@latest
+	env GOBIN= go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	env GOBIN= go install ./cmd/abigen
 	@type "solc" 2> /dev/null || echo 'Please install 
 
 # The devtools target installs tools required for 'go generate'.
